@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     if(isLoading) return ;
 
-    if(workspaceId){
+    if(workspaceId ){
       
       router.replace(`/workspaces/${workspaceId}`);
 
@@ -40,7 +40,6 @@ export default function Home() {
         <AuthScreen/>
       </Unauthenticated>
       <Authenticated>
-        {/* <Modals/> */}
         <UserButton />
       </Authenticated>
     </div>

@@ -31,7 +31,7 @@ export const join= mutation ({
     const workspace = await ctx.db.get(args.workspaceId);
 
     if(!workspace){
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 1");
     }
 
     if(workspace.joinCode !== args.joinCode.toLowerCase()){
@@ -75,7 +75,7 @@ export const newJoinCode =mutation({
 
     if(!userId)
     {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 2");
     }
 
     const member = await ctx.db
@@ -85,7 +85,7 @@ export const newJoinCode =mutation({
   ).unique();
 
     if(!member || member.role !== "admin"){
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 3");
     }
 
 
@@ -110,7 +110,7 @@ export const create = mutation({
     const userId = await getAuthUserId(ctx);
 
     if (!userId) {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 4");
     }
     //Todo Create a proper method later
     const joinCode = generateCode();
@@ -174,7 +174,7 @@ export const getInfoById = query ({
     const userId = await getAuthUserId(ctx);
 
     if (!userId) {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 5");
     }
 
     const member = await ctx.db
@@ -202,7 +202,7 @@ export const getByid = query({
     const userId = await getAuthUserId(ctx);
 
     if (!userId) {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 6");
     }
 
     const member = await ctx.db
@@ -229,7 +229,7 @@ export const update = mutation({
     const userId = await getAuthUserId(ctx);
 
     if (!userId) {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 7");
     }
 
     const member = await ctx.db
@@ -241,7 +241,7 @@ export const update = mutation({
 
       if(!member || member.role != "admin")
       {
-        throw new Error ("Unauthorized");
+        throw new Error ("Unauthorized 8");
       }
 
       await ctx.db.patch(args.id , {
@@ -264,7 +264,7 @@ export const remove = mutation({
     const userId = await getAuthUserId(ctx);
 
     if (!userId) {
-      throw new Error("Unauthorized");
+      throw new Error("Unauthorized 9");
     }
 
     const member = await ctx.db
@@ -276,7 +276,7 @@ export const remove = mutation({
 
       if(!member || member.role != "admin")
       {
-        throw new Error ("Unauthorized");
+        throw new Error ("Unauthorized 10");
       }
 
       const [members] = await Promise.all([

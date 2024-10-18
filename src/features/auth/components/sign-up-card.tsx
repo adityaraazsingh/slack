@@ -8,30 +8,36 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+
+
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { TriangleAlert } from "lucide-react";
+
+import { useAuthActions } from "@convex-dev/auth/react";
+
 import { SignInFlow } from "../types";
 import { useState } from "react";
-import { TriangleAlert } from "lucide-react";
-import { useAuthActions } from "@convex-dev/auth/react";
 
 interface SignUpCardProps {
   setState: (state: SignInFlow) => void;
 }
 
 export const SignUpCard = ({ setState }: SignUpCardProps) => {
+  const { signIn } = useAuthActions();
+
+
+  const [name, setName]= useState("");
+  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
+  const [pending, setPending] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
-  const [pending, setPending] = useState(false);
-  const { signIn } = useAuthActions();
-  const [name, setName]= useState("");
 
   const onPasswordSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (password != confirmpassword) {
+    if (password !== confirmpassword) {
       setError("Password do not match.");
       return;
     }
@@ -90,7 +96,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            type="password"
+            // type="password"
             required
           />
           <Input
@@ -98,7 +104,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
             value={confirmpassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm Password"
-            type="password"
+            // type="password"
             required
           />
           <Button type="submit" className="w-full" size="lg" disabled={pending}>

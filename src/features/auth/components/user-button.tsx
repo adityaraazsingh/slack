@@ -1,30 +1,31 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { useCurrentUser } from "../api/use-current-users";
 import { Loader, LogOut } from "lucide-react";
 import { useAuthActions } from "@convex-dev/auth/react";
 
 export const UserButton = () => {
+
+
   const { data, isLoading } = useCurrentUser();
   const {signOut} = useAuthActions();
-
+  
   if (isLoading) {
     return <Loader className="size-4 animate-spin text-muted-foreground" />;
   }
   if (!data) {
     return null;
   }
-
   const { image, name, email } = data;
+
 
   const avatarFallback = name!.charAt(0).toUpperCase();
 
@@ -38,7 +39,7 @@ export const UserButton = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="center" side="right" className="w-60">
         <DropdownMenuItem className="text-sm">{email}</DropdownMenuItem>
-        <DropdownMenuItem onClick={()=> signOut() } className="h-10">
+        <DropdownMenuItem onClick={signOut} className="h-10">
           <LogOut className="size-4 mr-2" />
           Log-Out
         </DropdownMenuItem>
