@@ -46,11 +46,13 @@ export const SidebarItem = ({
             variant: variant,
           })
         )}
-        // asChild
+        
       >
         <Link href={`/workspaces/${workspaceId}/channel/${id}`}>
         <Icon className="size-5 shrink-0 mr-1 " />
-        <span className="text-sm truncate">{label}</span>
+        <span className="text-sm truncate">{
+        label
+        }</span>
         </Link>
       </Button>
     </div>

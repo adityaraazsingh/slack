@@ -1,15 +1,15 @@
 "use client";
 
-
 import { Authenticated, Unauthenticated } from "convex/react";
-
 import { UserButton } from "@/features/auth/components/user-button";
+
 import { AuthScreen } from "@/features/auth/components/auth-screen";
 import { useGetWorkspaces } from "@/features/workspaces/api/use-get-workspaces";
+
 import { useEffect, useMemo } from "react";
 import { useCreateWorkspaceModal } from "@/features/workspaces/store/use-create-workspace-modal";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; 
 
 export default function Home() {
 

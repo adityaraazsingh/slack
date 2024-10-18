@@ -9,7 +9,7 @@ export const Sidebar = () => {
     const pathname =usePathname();
 
   return (
-    <aside className="w-[70px] h-auto bg-[#481493] ">
+    <aside className="w-[70px] h-auto bg-[#481493]  ">
       <div className="flex flex-col items-center justify-between gap-y-1 mt-auto h-full">
         <div className="flex flex-col justify-evenly p-1 gap-y-3">
           <WorkspaceSwitcher />
