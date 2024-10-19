@@ -8,7 +8,7 @@ interface WorkspaceSectionProps{
 import { FaCaretDown } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Hint } from "@/components/hint";
-import { Plus, PlusIcon } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import {useToggle} from "react-use";
 import { cn } from "@/lib/utils";
 

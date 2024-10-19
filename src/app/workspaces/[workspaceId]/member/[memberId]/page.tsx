@@ -27,7 +27,7 @@ const MemberIdPage = () => {
       onSuccess(data){
         setConversationId(data);
       },
-      onError(error){
+      onError(){
         toast.error("Failed to create or get Conversation");
       }
     });

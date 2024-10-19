@@ -14,6 +14,7 @@ export const SidebarButton =({
     icon: Icon,
     label,
     isActive,
+    
 }: SidebarButtonProps)=>{
 
     return (
