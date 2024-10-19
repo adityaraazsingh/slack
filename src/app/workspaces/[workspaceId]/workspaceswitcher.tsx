@@ -12,8 +12,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Loader, Plus } from "lucide-react";
-import { Modals } from "@/components/modals";
-import { useEffect } from "react";
 
 
 export const WorkspaceSwitcher = () => {
@@ -26,7 +24,7 @@ export const WorkspaceSwitcher = () => {
     const [_open,setOpen] = useCreateWorkspaceModal();
   
 
-  const { data: workspaces, isLoading: workspacesLoading } = useGetWorkspaces();
+  const { data: workspaces, } = useGetWorkspaces();
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({
     id: workspaceId,
   });
