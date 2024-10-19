@@ -63,6 +63,7 @@ export const ChatInput=({placeholder}:ChatInputProps)=>{
             };
             if(image){
                 const url = await generateUploadUrl({},{throwError: true});
+                    console.log(url);
                     if(!url){
                       throw new Error("Url not Found");
                     }
@@ -71,12 +72,13 @@ export const ChatInput=({placeholder}:ChatInputProps)=>{
                         headers: {"Content-Type": image.type},
                         body: image,
                     });
+                    console.log(result);
                     if(!result.ok){
                         throw new Error("Failed to upload image");
                     }
                     const {storageId} = await result.json();
                     values.image = storageId;
-            }   
+            }                               
             //create message
             await createMessage(values ,{throwError: true});
             setEditorKey((prevKey)=> prevKey +1);
