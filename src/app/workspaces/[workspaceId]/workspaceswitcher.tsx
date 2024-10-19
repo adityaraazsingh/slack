@@ -37,9 +37,6 @@ export const WorkspaceSwitcher = () => {
     (workspace) => workspace?._id !== workspaceId
   );
 
-
-
-
   return (
     <>
     <DropdownMenu>

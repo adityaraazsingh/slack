@@ -1,5 +1,4 @@
 import { Dialog,
-    DialogDescription,
     DialogContent,
     DialogHeader,
     DialogTitle
@@ -46,8 +45,7 @@ import { toast } from "sonner";
                     router.push(`/workspaces/${workspaceId}/channel/${id}`);
                     handleClose();
                 },
-                onError:()=>{
-                }
+                
             }
         )
     }

@@ -66,9 +66,9 @@ export const PreferencesModal = ({
           // router.replace("/");
         },
 
-        onError: () => {
-          toast.error("Failed to remove workspace");
-        },
+        // onError: () => {
+        //   toast.error("Failed to remove workspace");
+        // },
       }
     );
   };

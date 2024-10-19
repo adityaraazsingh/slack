@@ -48,12 +48,6 @@ export const CreateWorkspaceModal = () => {
         handleClose();
        
       },
-      onError:(error) =>{
-        
-      },
-      onSettled:()=>{
-        //Reset Form
-      }
 
     })
 
