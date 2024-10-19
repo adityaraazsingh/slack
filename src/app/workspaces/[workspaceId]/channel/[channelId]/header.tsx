@@ -69,9 +69,7 @@ export const Header = ({ title }: HeaderProps) => {
           toast.success("Channel Deleted!!");
           router.push(`/workspaces/${workspaceId}`);
         },
-        onc: () => {
-          toast.error("Failed to Delete Channel");
-        },
+       
       }
     );
   };
