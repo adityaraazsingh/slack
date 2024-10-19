@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useEffect, useMemo } from "react";
 
-const joinPage =() =>{
+const JoinPage =() =>{
 
     const router = useRouter();
     const workspaceId = useWorkspaceId();
@@ -96,4 +96,4 @@ const joinPage =() =>{
     );
 };
 
-export default joinPage;
+export default JoinPage;
