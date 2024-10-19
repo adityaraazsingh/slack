@@ -37,18 +37,19 @@ export const SidebarItem = ({
   const workspaceId = useWorkspaceId();
 
   return (
-    <div className="flex justify-between ">
+    <div className="flex justify-between w-full ">
       <Button
         variant="transparent"
         size="sm"
-        className={cn(
-          sidebarItemVariants({
-            variant: variant,
-          })
+         className={cn(
+           sidebarItemVariants({
+             variant: variant,
+           })
         )}
+       
         
       >
-        <Link href={`/workspaces/${workspaceId}/channel/${id}`}>
+        <Link href={`/workspaces/${workspaceId}/channel/${id}`} className="flex ">
         <Icon className="size-5 shrink-0 mr-1 " />
         <span className="text-sm truncate">{
         label

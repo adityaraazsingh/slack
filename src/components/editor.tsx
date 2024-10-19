@@ -157,7 +157,7 @@ const Editor = ({
   const isEmpty = !image && text.replace(/<(.|\n)*?/g, "").trim().length === 0;
 
   return (
-    <div className="flex flex-col">
+    <div className=" flex flex-col">
       <Input
         type="file"
         accept="image/*"
@@ -250,7 +250,7 @@ const Editor = ({
                   onSubmit({
                     body: JSON.stringify(quillRef.current?.getContents()),
                     image,
-                    
+                     
                   })
                 }}
                 size="sm"

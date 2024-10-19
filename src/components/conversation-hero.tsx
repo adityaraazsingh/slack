@@ -11,9 +11,9 @@ export const ConversationHero = ({ name, image }: ConversationHeroProps) => {
   return (
     <div className="mt-[88px] mx-5 mb-4">
       <div className="flex flex-col justify-center items-center">
-        <Avatar className="size-2/12 hover:opacity-75      transition">
+        <Avatar className=" hover:opacity-75      transition">
           <AvatarImage alt={name} src={image} />
-          <AvatarFallback className="bg-sky-400 text-white">
+          <AvatarFallback className="bg-sky-400 text-white  ">
             {avatarFallback}
           </AvatarFallback>
         </Avatar>

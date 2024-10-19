@@ -67,12 +67,12 @@ export const WorkspaceSidebar = () => {
         workspace={workspace}
         isAdmin={member.role === "admin"}
       />
-      <div className="flex flex-col px-2 mt-3">
+      <div className="flex flex-col px-2 mt-3 w-auto">
         <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />
         <SidebarItem label="Drafts and Sent" icon={SendHorizonal} id="drafts" />
       </div>
 
-      <WorkspaceSection label="Channels" hint="New Channel" onNew={member.role==="admin"?() => setOpen(true):undefined}>
+      <WorkspaceSection label="Channels" hint="New Channel" onNew={member.role==="admin"?() => setOpen(true):undefined} >
         {channels?.map((item) => (
           <SidebarItem
             key={item._id}

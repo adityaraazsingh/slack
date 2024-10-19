@@ -69,6 +69,7 @@ export const Toolbar = () => {
               {channels?.map((channel) => (
                 
                   <CommandItem 
+                  key={channel._id}
                   onSelect={()=>channelClick(channel._id)}>
                     <span>{channel.name}</span>
                   </CommandItem>
@@ -78,7 +79,7 @@ export const Toolbar = () => {
             <CommandSeparator />
             <CommandGroup heading="Members">
               {members?.map((member) => (
-                <CommandItem onSelect={()=>memberClick(member._id)}>
+                <CommandItem key={member._id} onSelect={()=>memberClick(member._id)}>
                     <span>{member.user.name}</span>
                   
                 </CommandItem>
