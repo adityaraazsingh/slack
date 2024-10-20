@@ -17,7 +17,6 @@ import {
   DialogContent,
   DialogTrigger,
   DialogClose,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -70,9 +69,7 @@ export const Header = ({ title }: HeaderProps) => {
           toast.success("Channel Deleted!!");
           router.push(`/workspaces/${workspaceId}`);
         },
-        onError: () => {
-          toast.error("Failed to Delete Channel");
-        },
+       
       }
     );
   };

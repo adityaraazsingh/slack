@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useEffect, useMemo } from "react";
 
-const joinPage =() =>{
+const JoinPage =() =>{
 
     const router = useRouter();
     const workspaceId = useWorkspaceId();
@@ -37,9 +37,7 @@ const joinPage =() =>{
                 router.replace(`/workspaces/${id}`);
                 toast.success("Workspace Joined");
             },
-            onError: ()=>{
-                toast.error("Failed to join the workspace")
-            }
+           
         })
     }
 
@@ -47,12 +45,10 @@ const joinPage =() =>{
         return (
             <div className="h-full flex items-center justify-center">
                 <Loader className="size-6 animate-spin text-muted-foreground"/>
-
             </div>
         )
     }
     
-
     return (
         <div className="h-screen flex flex-col gap-y-8 items-center justify-center bg-white p-8 rounded-lg shadow-md">
             <Image src="/hash.svg" 
@@ -100,4 +96,4 @@ const joinPage =() =>{
     );
 };
 
-export default joinPage;
+export default JoinPage;

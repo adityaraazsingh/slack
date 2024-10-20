@@ -13,7 +13,7 @@ import { usePanel } from "@/hooks/use-panel";
 import { Loader } from "lucide-react";
 import { Id } from "../../../../convex/_generated/dataModel";
 import { Thread } from "@/features/messages/components/thread";
-import { profile } from "console";
+
 import { Profile } from "@/features/members/components/profile";
 
 interface WorkspaceIdLayoutProps {

@@ -1,7 +1,6 @@
 import { useMutation } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import { useCallback, useMemo } from "react";
-import {  Id } from "../../../../convex/_generated/dataModel";
 import { useState } from "react";
 
 
@@ -26,7 +25,7 @@ export const useGenerateUploadUrl = () => {
 
   const mutation = useMutation(api.upload.generateUploadUrl);
 
-
+  
   const mutate = useCallback(
     async (_values: {}, options?: Options) => {
       try {
@@ -34,7 +33,7 @@ export const useGenerateUploadUrl = () => {
         setError(null); 
         setStatus("pending");
 
-        const response = await mutation(_values);
+        const response = await mutation();
         options?.onSuccess?.(response);
       } catch (error) {
         setStatus("error");

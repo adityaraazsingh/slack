@@ -4,7 +4,7 @@ import { useWorkspaceId } from "@/hooks/use-workspace-id";
 import { useGetWorkspace } from "@/features/workspaces/api/use-get-worspace";
 
 import {
-  Command,
+  
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -12,12 +12,12 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
+  
 } from "@/components/ui/command";
 import { useState } from "react";
 import { useGetChannels } from "@/features/Channels/api/use-get-channels";
 import { useGetMember } from "@/features/members/api/use-get-member";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 
 export const Toolbar = () => {

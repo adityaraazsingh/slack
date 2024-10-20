@@ -30,7 +30,7 @@ interface ProfileProps {
   role?: "admin" | "member";
 }
 
-export const Profile = ({ memberId, role, onClose }: ProfileProps) => {
+export const Profile = ({ memberId,  onClose }: ProfileProps) => {
   const { data: member, isLoading: isLoadingMember } = useGetOnlyOneMember({
     id: memberId,
   });

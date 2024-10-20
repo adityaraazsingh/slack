@@ -58,12 +58,13 @@ export const ChatInput=({placeholder , conversationId}:ChatInputProps)=>{
             const values: CreateMessageValues = {
                 conversationId,
                 workspaceId,
+
                 body,
                 image:undefined,
             };
             if(image){
                 const url = await generateUploadUrl({},{throwError: true});
-                    if(!url){
+                    if(url===undefined){
                       throw new Error("Url not Found");
                     }
                     const result = await fetch(url,{

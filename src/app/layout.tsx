@@ -6,7 +6,7 @@ import { ConvexClientProvider } from "@/components/convex-client-provider";
 
 import { Modals } from "@/components/modals";
 import { Toaster } from "sonner";
-import { CreateWorkspaceModal } from "@/features/workspaces/components/create-workspace-modal";
+
 import { JotaiProvider } from "@/components/jotai-provider";
 
 const geistSans = localFont({
@@ -75,7 +75,7 @@ export default function RootLayout({
           <ConvexClientProvider>
             <JotaiProvider>
               <Toaster />
-              <Modals /> 
+              <Modals/> 
               {children}
             </JotaiProvider>
           </ConvexClientProvider>

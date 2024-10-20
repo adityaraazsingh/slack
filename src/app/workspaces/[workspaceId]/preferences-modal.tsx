@@ -2,7 +2,7 @@ import { toast } from "sonner";
 import { useUpdateWorkspace } from "@/features/workspaces/api/use-update-workspaces";
 import { useRemoveWorkspace } from "@/features/workspaces/api/use-remove-workspaces";
 import { useWorkspaceId } from "@/hooks/use-workspace-id";
-import { useEffect } from "react";
+
 
 import React from "react";
 import { useState } from "react";
@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { TrashIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
+
 import { useConfirm } from "@/hooks/use-confirm";
 
 interface PreferencesModalProps {
@@ -35,7 +35,7 @@ export const PreferencesModal = ({
 }: PreferencesModalProps) => {
   const workspaceId = useWorkspaceId();
 
-  const router = useRouter();
+
   const [value, setValue] = useState(initialvalue);
   const [editOpen, setEditOpen] = useState(false);
 
@@ -66,9 +66,9 @@ export const PreferencesModal = ({
           // router.replace("/");
         },
 
-        onError: () => {
-          toast.error("Failed to remove workspace");
-        },
+        // onError: () => {
+        //   toast.error("Failed to remove workspace");
+        // },
       }
     );
   };
