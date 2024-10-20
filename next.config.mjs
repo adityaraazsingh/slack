@@ -10,5 +10,5 @@ const withPWA = withPWAInit({
 
 export default withPWA({
   // Your Next.js config
-  reactStrictMode: true,
+  
 });
